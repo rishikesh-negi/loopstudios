@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply font-sans text-4xl tracking-tight text-slate-800 uppercase;
+  }
+}
+
+#header {
+  background-image: url(../images/desktop/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-container {
+  @apply container max-w-6xl mx-auto px-6;
+}
+
+.nav-links {
+  @apply relative px-2 py-1 z-20 text-base leading-loose tracking-wide rounded-sm overflow-hidden active:translate-y-0.5 transition-all after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:-z-10 after:bg-blue-700 after:h-0 after:w-full hover:after:h-full after:transition-all after:duration-300;
+}
+
+.menu-links {
+  @apply w-full relative z-50 px-6 py-3 bg-blue-800 text-center font-semibold tracking-widest overflow-hidden active:translate-y-0.5 after:absolute after:top-0 after:left-[90%] after:bg-blue-600 after:w-full after:h-full after:-z-10 hover:after:left-0 after:transition-all duration-200;
+}
+
+.footer-links {
+  @apply relative text-base tracking-wide text-white after:content-[''] after:absolute after:bg-white after:bottom-0 after:left-0 after:right-0 after:h-px after:w-0 hover:after:w-full transition after:transition-all duration-300;
+}
+
+.creation-title {
+  @apply absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-gray-900 lg:via-gray-900/20 to-transparent pb-3 px-5 flex items-end justify-start text-2xl text-white font-light tracking-tight uppercase transition-all duration-150 group-hover:text-3xl group-hover:from-white/60 group-hover:via-white/30 group-hover:text-black group-hover:font-semibold lg:group-hover:from-white/80 lg:group-hover:via-transparent lg:group-hover:to-transparent;
+}
+
+@media only screen and (max-width: 37.5em) {
+  #header {
+    background-image: url(../images/mobile/image-hero.jpg);
+    background-position: center;
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: all 0.6s cubic-bezier(0.7, -0.5, 0.5, 1.4);
+}
+
+.hamburger-top {
+  transform: translateY(-7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(7px);
+}
+
+.open .hamburger-top {
+  transform: rotate(225deg);
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-225deg);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.menu-open {
+  @apply right-0 visible;
+}
+
+.menu-close {
+  @apply -right-[120%] invisible;
+}
+
+.stopscroll {
+  overflow-y: hidden;
+}
